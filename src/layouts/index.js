@@ -13,7 +13,7 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-      script={[{ src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenMax.min.js", type: "text/javascript" }]}
+      script={[{ src: "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js", type: "text/javascript" }]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
     <div>
