@@ -100,17 +100,17 @@ export default class IndexPage extends Component {
   componentDidMount() {
     const { currentView, clickReady } = this.state;
 
-    if (window.screen.width <= 800) {
-      let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
+    // if (window.screen.width <= 800) {
+    let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
 
-      scrollHammers.on('swipeup', () => {
-        this.toggleUp(currentView, clickReady);
-      });
+    scrollHammers.on('swipeup', () => {
+      this.toggleUp(currentView, clickReady);
+    });
 
-      scrollHammers.on('swipedown', () => {
-        this.toggleDown(currentView, clickReady);
-      })
-    }
+    scrollHammers.on('swipedown', () => {
+      this.toggleDown(currentView, clickReady);
+    })
+    // }
   }
   render() {
     const { currentView, clickReady, clickDirection } = this.state;
