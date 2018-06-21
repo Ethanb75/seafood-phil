@@ -343,6 +343,10 @@ body, .article {
 
 /* Mobile style 800px and less */
 @media screen and (max-width: 800px) {
+  .titleList h1 {
+    font-size: 5.378em;
+    margin-bottom: 1rem;
+  }
   .indexWrap {
     flex-direction: column;
   }
@@ -353,17 +357,21 @@ body, .article {
     position: absolute;
     bottom: 0;
     justify-content: flex-end;
-    height: 9.2vw;
+    height: auto;
     z-index: 2;
+  }
+  .index__meta > div:first-of-type {
+    padding: 1.5rem;
   }
   .index__meta > div:last-of-type {
     display: none;
   }
   .index__image {
-    height: 76vh;
+    height: 76%;
   }
   .index__content {
-    height: 24vh;
+    height: auto;
+    flex-grow: 1;
   }
   .controls {
     bottom: 2.5vh;
