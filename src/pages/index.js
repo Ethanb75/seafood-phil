@@ -73,7 +73,8 @@ export default class IndexPage extends Component {
         targets: [newElem, oldElem],
         translateY: '-=100%',
         duration: 750,
-        easing: 'easeInOutSine'
+        // easing: 'easeInOutSine',
+        elasticity: 100
       })
   }
   scrollImagesDown(newView) {
@@ -94,7 +95,8 @@ export default class IndexPage extends Component {
         targets: [newElem, oldElem],
         translateY: '+=100%',
         duration: 750,
-        easing: 'easeInOutSine'
+        // easing: 'easeInOutSine',
+        elasticity: 100
       })
   }
   componentDidMount() {
