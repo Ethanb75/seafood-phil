@@ -104,7 +104,7 @@ export default class IndexPage extends Component {
       let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
       scrollHammers.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
       scrollHammers.on('swipeup swipedown', ev => {
-        // alert(`swipe: ${ev.type}`);
+        alert(`swipe: ${ev.type}`);
 
         // this.toggleUp(currentView, clickReady);
       });
