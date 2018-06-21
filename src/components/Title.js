@@ -25,7 +25,7 @@ export default class Title extends Component {
         </div>
         <div className="textList">
           <p className={currentView === 1 ? 'active' : ''}>
-            Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
+            1Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
           </p>
           <p className={currentView === 2 ? 'active' : ''}>
             Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
