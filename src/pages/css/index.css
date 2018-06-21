@@ -52,6 +52,7 @@ body, .article {
 .index__background {
   height: 76vh;
   position: relative;
+  /* will-change: contents; */
 }
 
 .index__background::before {
@@ -123,8 +124,9 @@ body, .article {
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: translateX(-125%);
-  transition: all .75s ease-out .1s;
+  opacity: 0;
+  transform: translateY(125%);
+  transition: all .5s ease-out;
 }
 
 .titleList h1:nth-of-type(1) {
@@ -132,7 +134,8 @@ body, .article {
 }
 
 .titleList h1.active {
-  transform: translateX(0%);
+  transform: translateY(0%);
+  opacity: 1;
 }
 .textList {
   position: relative;
@@ -146,8 +149,9 @@ body, .article {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateX(-125%);
-  transition: all .75s ease-out .2s;
+  opacity: 0;
+  transform: translateY(-125%);
+  transition: all .5s ease-out .2s;
 }
 
 .textList p:nth-of-type(2) {
@@ -155,7 +159,8 @@ body, .article {
 }
 
 .textList p.active {
-  transform: translateX(0%);
+  transform: translateY(0%);
+  opacity: 1;
 }
 
 .index__image {

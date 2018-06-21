@@ -72,9 +72,10 @@ export default class IndexPage extends Component {
       .add({
         targets: [newElem, oldElem],
         translateY: '-=100%',
-        duration: 750,
-        // easing: 'easeInOutSine',
-        elasticity: 100
+        duration: 700,
+        // easing: 'easeOutQuad',
+        easing: 'easeOutCubic'
+        // elasticity: 100
       })
   }
   scrollImagesDown(newView) {
@@ -86,6 +87,7 @@ export default class IndexPage extends Component {
     //after a click, grab new view number 
     // put into position first in timeline,
     // scroll them both on next timeline run
+    //cubic-bezier(0,0,0,1) => easing: [0, 0, 0, 1]
     timeline.add({
       targets: newElem,
       translateY: '-100%',
@@ -94,9 +96,10 @@ export default class IndexPage extends Component {
       .add({
         targets: [newElem, oldElem],
         translateY: '+=100%',
-        duration: 750,
-        // easing: 'easeInOutSine',
-        elasticity: 100
+        duration: 700,
+        // easing: 'easeOutQuad',
+        easing: 'easeOutCubic'
+        // elasticity: 100
       })
   }
   componentDidMount() {
