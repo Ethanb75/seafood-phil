@@ -108,9 +108,9 @@ export default class IndexPage extends Component {
         let { currentView, clickReady } = this.state;
 
         if (ev.type === 'swipeup') {
-          this.toggleUp(currentView, clickReady);
-        } else if (ev.type === 'swipedown') {
           this.toggleDown(currentView, clickReady);
+        } else if (ev.type === 'swipedown') {
+          this.toggleUp(currentView, clickReady);
         }
       });
     })
@@ -168,8 +168,6 @@ export default class IndexPage extends Component {
             <span style={currentView === 4 ? { backgroundColor: 'rgb(190, 190, 190)' } : {}}></span>
           </div>
           <Title currentView={currentView} />
-          {/* <h1>Seafood Phil</h1>
-          <p>Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.</p> */}
           <nav className="controls">
             <button onClick={() => this.toggleUp(currentView, clickReady)}>
               <img src={up} />
