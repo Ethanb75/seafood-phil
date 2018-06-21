@@ -367,11 +367,17 @@ body, .article {
     display: none;
   }
   .index__image {
-    height: 76%;
+    height: 64%;
+  }
+  .index__background {
+    height: 100%;
   }
   .index__content {
     height: auto;
     flex-grow: 1;
+  }
+  .viewPag {
+    height: 64vh;
   }
   .controls {
     bottom: 2.5vh;
