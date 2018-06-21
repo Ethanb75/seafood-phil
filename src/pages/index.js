@@ -98,20 +98,20 @@ export default class IndexPage extends Component {
       })
   }
   componentDidMount() {
-    const { currentView, clickReady } = this.state;
+    // const { currentView, clickReady } = this.state;
 
     window.addEventListener('load', () => {
       let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
+
       scrollHammers.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
       scrollHammers.on('swipeup swipedown', ev => {
-        // alert(`swipe: ${ev.type}`);
+        let { currentView, clickReady } = this.state;
+
         if (ev.type === 'swipeup') {
           this.toggleUp(currentView, clickReady);
         } else if (ev.type === 'swipedown') {
           this.toggleDown(currentView, clickReady);
         }
-
-        // this.toggleUp(currentView, clickReady);
       });
     })
 
