@@ -21,17 +21,15 @@ colors: base #7a9f35 (fresh green),
 * {
   /* font-family: 'Open Sans', sans-serif; */
 }
-html, :root {
+:root {
   font-size: 14px;
   line-height: 1.4;
-  overflow: hidden;
-  position: relative;
-  height: 100%;
 }
 
-body {
+body, html {
   position: relative;
   height: 100%;
+  overflow: hidden;
 }
 
 body, .article {
