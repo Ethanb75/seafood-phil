@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Title from '../components/Title';
 import Link from 'gatsby-link';
 import anime from 'animejs';
-// import Hammer from 'hammerjs';
 
 import './css/index.css';
 import heroVid from '../assets/vid.webm';
@@ -13,10 +12,10 @@ import down from '../assets/down.svg';
 import play from '../assets/play.svg';
 
 // images
-import hero1 from '../assets/h1.png';
+import hero1 from '../assets/food.png';
 import hero2 from '../assets/h2.png';
-import hero3 from '../assets/h3.png';
-import hero4 from '../assets/h4.png';
+import hero3 from '../assets/contact.png';
+import hero4 from '../assets/catering2.png';
 
 const animationTime = 500;
 
@@ -175,9 +174,12 @@ export default class IndexPage extends Component {
           <Title currentView={currentView} />
           <nav className="controls">
             <button onClick={() => this.toggleUp(currentView, clickReady)}>
+              Previous
               <img src={up} />
             </button>
+            <span>/</span>
             <button onClick={() => this.toggleDown(currentView, clickReady)}>
+              Next
               <img src={down} />
             </button>
           </nav>

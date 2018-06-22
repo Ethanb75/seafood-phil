@@ -146,11 +146,12 @@ body, .article {
   max-width: 85%;
   color: rgb(190, 190, 190);
   margin-left: .2rem;
+  margin-bottom: 0;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  transform: translateY(-125%);
+  transform: translateY(125%);
   transition: all .5s ease-out .2s;
 }
 
@@ -272,20 +273,27 @@ body, .article {
   position: absolute;
   bottom: calc(24vh - 3rem);
   display: flex;
+  color: rgb(216, 216, 216);
+}
+
+.controls > span {
+  margin: 0rem 1.5rem;
 }
 
 .controls button {
   position: relative;
-  margin: 0 .5rem 0 0;
+  /* margin: 0 .5rem 0 0; */
   display: flex;
-  padding: .5rem;
-  border: 2px solid rgb(190, 190, 190);
+  /* padding: .5rem; */
+  /* border: 2px solid rgb(190, 190, 190); */
+  border: none;
+  color: rgb(216, 216, 216);
   cursor: pointer;
   background: transparent;
   overflow: hidden;
 }
 
-.controls button::before {
+/* .controls button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -296,7 +304,7 @@ body, .article {
   z-index: 0;
   transition: transform .2s ease;
   transform: translateY(100%);
-}
+} */
 
 /* .controls button:last-of-type::before {
   transform: translateY(-100%);
@@ -310,6 +318,7 @@ body, .article {
   width: .7rem;
   margin: 0;
   z-index: 1;
+  margin-left: .5rem;
 }
 
 
@@ -385,6 +394,24 @@ body, .article {
     height: 64vh;
   }
   .controls {
-    bottom: 2.5vh;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+  }
+  .controls button {
+    flex-grow: 1;
+justify-content: center;
+    margin: 0;
+    padding: 1.5rem 0rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .index__content {
+    justify-content: flex-start;
+  }
+  .titleList h1 {
+    margin-top: 1.5rem;
   }
 }

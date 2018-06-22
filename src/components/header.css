@@ -1,3 +1,101 @@
 .header {
+  /* position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; */
+}
+
+.navBtnWrap {
   position: absolute;
+  right: 2rem;
+  top: 2rem;
+  z-index: 1000;
+}
+
+.navLogo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  padding: 2rem;
+  /* background-color: #FF3734; */
+  /* background-color: white; */
+}
+
+.navLogo img {
+  width: 5rem;
+  margin-bottom: 0;
+}
+
+.navBtn {
+  position: relative;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navBtn.open > span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.navBtn.open > span:first-of-type {
+  transform: rotate(-45deg) translateY(-1rem);
+  transform-origin: right;
+}
+
+.navBtn.open > span:last-of-type {
+  transform: rotate(45deg) translateY(1rem);
+  transform-origin: right;
+}
+
+.navBtn > span {
+  position: relative;
+  height: .25rem;
+  width: 3.5rem;
+  background-color: white;
+  transition: all .2s ease;
+}
+
+.navBtn > span:nth-of-type(2) {
+  margin: .5rem 0;
+}
+
+#nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease;
+}
+
+#nav li {
+  list-style: none;
+  margin: 2rem 0;
+}
+
+#nav li:nth-of-type(2) {
+  padding-bottom: 2rem;
+  border-bottom: 4px solid #FF3734;
+}
+
+#nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+#nav.navOpen {
+  pointer-events: initial;
+  opacity: 1;
 }
