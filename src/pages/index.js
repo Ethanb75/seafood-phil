@@ -17,6 +17,10 @@ import hero2 from '../assets/h2.png';
 import hero3 from '../assets/contact.png';
 import hero4 from '../assets/catering2.png';
 
+//social media icons
+import insta from '../assets/instagram.svg'
+import yt from '../assets/youtube.svg'
+
 const animationTime = 700;
 
 
@@ -182,6 +186,17 @@ export default class IndexPage extends Component {
               <img src={down} />
             </button>
           </nav>
+          <div className="social">
+            <a href="">
+              <img src={insta} />
+            </a>
+            <a href="">
+              <img src={yt} />
+            </a>
+            <a href="">
+              <img src={insta} />
+            </a>
+          </div>
 
           {/* mobile call to scroll */}
           <div className={swipedOnce ? "scrollCaller hide" : "scrollCaller"}>
