@@ -165,10 +165,10 @@ export default class IndexPage extends Component {
         </div>
         <div className="index__content">
           <div className="viewPag">
-            <span style={currentView === 1 ? { backgroundColor: '#B4B5AF' } : {}}></span>
-            <span style={currentView === 2 ? { backgroundColor: '#B4B5AF' } : {}}></span>
-            <span style={currentView === 3 ? { backgroundColor: '#B4B5AF' } : {}}></span>
-            <span style={currentView === 4 ? { backgroundColor: '#B4B5AF' } : {}}></span>
+            <span className={currentView === 1 ? "active" : ""}></span>
+            <span className={currentView === 2 ? "active" : ""}></span>
+            <span className={currentView === 3 ? "active" : ""}></span>
+            <span className={currentView === 4 ? "active" : ""}></span>
           </div>
           <Title currentView={currentView} />
           <nav className="controls">
