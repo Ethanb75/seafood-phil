@@ -17,14 +17,15 @@ import hero2 from '../assets/h2.png';
 import hero3 from '../assets/contact.png';
 import hero4 from '../assets/catering2.png';
 
-const animationTime = 500;
+const animationTime = 700;
 
 
 export default class IndexPage extends Component {
   state = {
     currentView: 1,
     clickReady: true,
-    clickDirection: 'up' /*or down */
+    clickDirection: 'up' /*or down */,
+    swipedOnce: false
   }
   toggleUp(currentView, clickReady) {
     let newView = currentView === 1 ? 4 : currentView - 1;
@@ -101,8 +102,8 @@ export default class IndexPage extends Component {
         // elasticity: 100
       })
   }
+
   componentDidMount() {
-    // const { currentView, clickReady } = this.state;
 
     window.addEventListener('load', () => {
       let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
@@ -111,29 +112,27 @@ export default class IndexPage extends Component {
       scrollHammers.on('swipeup swipedown', ev => {
         let { currentView, clickReady } = this.state;
 
+        //after a swipe, remove the swipe caller
+        if (!this.state.swipedOnce) this.setState({ swipedOnce: true });
+
         if (ev.type === 'swipeup') {
           this.toggleDown(currentView, clickReady);
         } else if (ev.type === 'swipedown') {
           this.toggleUp(currentView, clickReady);
         }
       });
+    });
+
+    window.addEventListener('wheel', ev => {
+      let { currentView, clickReady } = this.state;
+      return ev.deltaY > 0 ?
+        this.toggleDown(currentView, clickReady)
+        :
+        this.toggleUp(currentView, clickReady);
     })
-
-
-    // if (window.screen.width <= 800) {
-    //   let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
-
-    //   scrollHammers.on('swipeup', () => {
-    //     this.toggleUp(currentView, clickReady);
-    //   });
-
-    //   scrollHammers.on('swipedown', () => {
-    //     this.toggleDown(currentView, clickReady);
-    //   })
-    // }
   }
   render() {
-    const { currentView, clickReady, clickDirection } = this.state;
+    const { currentView, clickReady, swipedOnce } = this.state;
     return (
       <div className="indexWrap">
         <div className="index__image">
@@ -150,7 +149,7 @@ export default class IndexPage extends Component {
             </div>
             <div>
               {/* change below video to image and a link to the video */}
-              <video src={heroVid} />
+              {/* <video src={heroVid} /> */}
               <div className="videoDesc">
                 <p>
                   seafood phil takes on nyc
@@ -166,10 +165,10 @@ export default class IndexPage extends Component {
         </div>
         <div className="index__content">
           <div className="viewPag">
-            <span style={currentView === 1 ? { backgroundColor: 'rgb(190, 190, 190)' } : {}}></span>
-            <span style={currentView === 2 ? { backgroundColor: 'rgb(190, 190, 190)' } : {}}></span>
-            <span style={currentView === 3 ? { backgroundColor: 'rgb(190, 190, 190)' } : {}}></span>
-            <span style={currentView === 4 ? { backgroundColor: 'rgb(190, 190, 190)' } : {}}></span>
+            <span style={currentView === 1 ? { backgroundColor: '#B4B5AF' } : {}}></span>
+            <span style={currentView === 2 ? { backgroundColor: '#B4B5AF' } : {}}></span>
+            <span style={currentView === 3 ? { backgroundColor: '#B4B5AF' } : {}}></span>
+            <span style={currentView === 4 ? { backgroundColor: '#B4B5AF' } : {}}></span>
           </div>
           <Title currentView={currentView} />
           <nav className="controls">
@@ -183,6 +182,13 @@ export default class IndexPage extends Component {
               <img src={down} />
             </button>
           </nav>
+
+          {/* mobile call to scroll */}
+          <div className={swipedOnce ? "scrollCaller hide" : "scrollCaller"}>
+            <img src={up} />
+            <span>swipe</span>
+            <img src={up} />
+          </div>
         </div>
       </div>
     )

@@ -18,14 +18,19 @@
   left: 0;
   top: 0;
   z-index: 1000;
-  padding: 2rem;
-  /* background-color: #FF3734; */
-  /* background-color: white; */
+  padding: 3rem 1.5rem;
+  background-color: #F6F8F0;
+}
+
+.navLogo a {
+  text-decoration: none;
+  color: #1B2700;
 }
 
 .navLogo img {
-  width: 5rem;
+  width: 6rem;
   margin-bottom: 0;
+  opacity: .9;
 }
 
 .navBtn {
@@ -98,4 +103,13 @@
 #nav.navOpen {
   pointer-events: initial;
   opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .navLogo {
+    padding: 2.5rem 1rem;
+  }
+  .navLogo img {
+    width: 4rem;
+  }
 }

@@ -9,10 +9,11 @@ baseline grid: 18.2px
 *
 colors: base #7a9f35 (fresh green), 
   60992d (deep green),
-  510d0a (deep red), 
-  dd291c (red)
-  bbd8b3, b7ce63 (light  green), 
-  fcd7ad (light tan)
+  light green: #DDE8C6
+  almost white: #F6F8F0
+  dark grey: #373933
+  light grey: #B4B5AF
+  almost black: #1B1C18
 */
 
 
@@ -105,9 +106,10 @@ body, .article {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 4.5vw 0 7.4vw;
-  background-color: rgb(25, 25, 25);
+  padding: 0 10rem 0 10rem;
+  background-color: #1B1C18;
   z-index: 1;
+  position: relative;
 }
 
 .titleList {
@@ -202,6 +204,22 @@ body, .article {
   color: rgba(255,255,255,.6);
   text-decoration: none;
   letter-spacing: 1px;
+  transition: all .2s ease;
+}
+
+.index__meta > div:first-of-type a span {
+  transition: all .3s ease;
+  display: inline-block;
+}
+
+.index__meta > div:first-of-type a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.index__meta > div:first-of-type a:hover span {
+  transform: translateX(-.5rem);
+  /* margin-right: 1rem; */
 }
 
 .index__meta > div:last-of-type {
@@ -213,6 +231,8 @@ body, .article {
   bottom: 0;
   overflow: hidden;
   z-index: 2;
+  background-image: url(../../assets/videoCover-comp.jpg);
+  background-size: cover;
 } 
 
 .index__meta > div:last-of-type::before {
@@ -229,27 +249,7 @@ body, .article {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 24%;
-  height: 24%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #dd291c;
-}
-
-.videoDesc {
-  position: absolute;
-  bottom: 0;
-  left: 2.5rem;
-  color: rgba(190, 190, 190, .8);
-  height: 24%;
-  display: flex;
-  align-items: center;
-}
-
-.videoDesc p {
-  font-size: .85em;
-  margin: 0;
+  
 }
 
 .videoPlay button {
@@ -260,9 +260,34 @@ body, .article {
   text-transform: uppercase;
   padding: .25rem;
   line-height: 0;
-  padding: 1rem;
-  border-radius: 50%;
+  padding: 1.5rem 2.43rem;
+  padding-bottom: 2.5rem;
+  transform: translateY(1rem);
+  transition: transform .2s ease;
+  background: #DDE8C6;
 }
+
+.videoPlay button:hover {
+  transform: translateY(0);
+}
+
+.videoDesc {
+  position: absolute;
+  bottom: 0;
+  left: 2.5rem;
+  /* color: rgba(190, 190, 190, .8); */
+  color: #F6F8F0;
+  height: 24%;
+  display: flex;
+  align-items: center;
+}
+
+.videoDesc p {
+  font-size: .85em;
+  margin: 0;
+}
+
+
 
 .videoPlay img {
   width: 1rem;
@@ -273,7 +298,10 @@ body, .article {
   position: absolute;
   bottom: calc(24vh - 3rem);
   display: flex;
-  color: rgb(216, 216, 216);
+  color: #373933;
+  width: calc(100% - 20rem);
+  padding-top: 1rem;
+  border-top: .25rem solid #373933;
 }
 
 .controls > span {
@@ -282,15 +310,16 @@ body, .article {
 
 .controls button {
   position: relative;
-  /* margin: 0 .5rem 0 0; */
   display: flex;
-  /* padding: .5rem; */
-  /* border: 2px solid rgb(190, 190, 190); */
   border: none;
-  color: rgb(216, 216, 216);
+  color: #f6f8f0ad;
   cursor: pointer;
   background: transparent;
   overflow: hidden;
+}
+
+.controls button:first-of-type {
+  padding-left: 0;
 }
 
 /* .controls button::before {
@@ -321,6 +350,9 @@ body, .article {
   margin-left: .5rem;
 }
 
+.scrollCaller {
+  display: none;
+}
 
 @media screen and (max-width: 1366px) {
   .titleList h1 {
@@ -389,21 +421,37 @@ body, .article {
   .index__content {
     height: auto;
     flex-grow: 1;
+    position: initial;
   }
   .viewPag {
     height: 64vh;
   }
   .controls {
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
+    display: none;
   }
-  .controls button {
-    flex-grow: 1;
-justify-content: center;
+  .scrollCaller {
+    display: initial;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 3rem;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    transition: all .2s ease;
+    animation: 1s linear infinite bounceIn;
+  }
+  .scrollCaller.hide {
+    opacity: 0;
+    animation: none;
+  }
+  .scrollCaller span {
+    margin: 0 1rem;
+    color: #DDE8C6;
+  }
+  .scrollCaller img {
+    width: 1rem;
     margin: 0;
-    padding: 1.5rem 0rem;
   }
 }
 
@@ -413,5 +461,25 @@ justify-content: center;
   }
   .titleList h1 {
     margin-top: 1.5rem;
+  }
+}
+
+
+@keyframes bounceIn{
+  0%{
+    /* opacity: 0; */
+    transform: translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
   }
 }

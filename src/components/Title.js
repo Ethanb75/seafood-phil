@@ -19,7 +19,7 @@ export default class Title extends Component {
       <div>
         <div className="titleList">
           <h1 className={currentView === 1 ? 'active' : ''}>Big Seafood</h1>
-          <h1 className={currentView === 2 ? 'active' : ''}>Food</h1>
+          <h1 className={currentView === 2 ? 'active' : ''}>Catering</h1>
           <h1 className={currentView === 3 ? 'active' : ''}>About</h1>
           <h1 className={currentView === 4 ? 'active' : ''}>Contact</h1>
         </div>

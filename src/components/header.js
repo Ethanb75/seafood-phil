@@ -20,6 +20,7 @@ export default class Header extends Component {
         <div className="navLogo">
           <Link to="/">
             <img src={navLogo} />
+            {/* <h3>Seafood <span style={{ display: 'block' }}>Phil</span></h3> */}
           </Link>
         </div>
         <div className="navBtnWrap">
