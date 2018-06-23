@@ -397,7 +397,8 @@ body, .article {
     display: none;
   }
   .index__image {
-    height: 64%;
+    height: 62%;
+    max-height: 62%;
   }
   .index__background {
     height: 100%;
@@ -449,6 +450,27 @@ body, .article {
   }
 }
 
+/* @media screen and (max-width: 500px) {
+  .index__content {
+    justify-content: flex-start;
+  }
+  .titleList h1 {
+    margin-top: 4rem;
+    font-size: 3.583em;
+    margin-bottom: 1rem;
+  }
+} */
+
+@media screen and (max-width: 360px) {
+  .index__meta > div:first-of-type {
+    width: 50%
+  }
+  .titleList h1 {
+    margin-top: 4rem;
+    font-size: 3.583em;
+    margin-bottom: 1rem;
+  }
+}
 
 @keyframes bounceIn{
   0%{
