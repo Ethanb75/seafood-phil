@@ -1,0 +1,132 @@
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* form label {
+  font-weight: 800;
+} */
+
+.orderBack {
+  width: 100%;
+  height: 15rem;
+  background-color: wheat;
+}
+.orderWrap {
+  display: flex;
+  justify-content: center;
+}
+.orderWrap form {
+  width: 65rem;
+  padding: 5rem;
+  position: relative;
+  top: -5rem;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orderWrap hr {
+  width: 30rem;
+  margin: 4rem 0;
+}
+
+.orderItem {
+  /* display: inline-block; */
+  margin: 0 0 1rem 0;
+}
+
+.orderItem input {
+  width: 30rem;
+  display: block;
+  padding: .5rem;
+  border: 2px solid #464646;
+}
+
+.orderItem input[name="postal"] {
+  width: 5rem;
+}
+
+.orderItem input:invalid {
+  /* border: 2px solid #FF3734; */
+}
+
+form input:required {
+  box-shadow: none;
+}
+
+.orderItem input:active, .orderItem input:focus {
+  border: 2px solid #7A9F35; 
+}
+
+.cateringSelect {
+  margin-top: 1rem;
+}
+
+.cateringSelect input {
+  display: block;
+  padding: .5rem;
+  border: 2px solid #464646;
+}
+
+.cateringSelect input:first-of-type {
+  margin-bottom: .5rem;
+}
+
+.foodSelection {
+  width: 30rem;
+}
+
+.foodSelection > div {
+  margin: 1.5rem 0;
+}
+
+.foodSelection textarea {
+  display: block;
+  width: 100%;
+}
+
+.foodSelection input[type="number"], .foodSelection textarea {
+  display: block;
+  padding: .5rem;
+  border: 2px solid #464646;
+} 
+
+form input[type="submit"] {
+  background: #7A9F35;
+  border: none;
+  width: 30rem;
+  color: whitesmoke;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+form input[type="submit"]:hover {
+  transform: translateY(-2px);
+}
+
+.foodSelection input[type="checkbox"], input[type="radio"] {
+  margin-right: .5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .orderWrap form {
+    width: 100%;
+    padding: 3rem;
+  }
+  .orderWrap hr {
+    width: 100%;
+  }
+  .orderInfo, .locationInfo, .foodSelection {
+    width: 100%;
+  }
+  .orderItem input {
+    width: 100%;
+  }
+  form input[type="submit"] {
+    width: 100%;
+  }
+}

@@ -2,17 +2,6 @@ import React, { Component } from 'react';
 
 
 export default class Title extends Component {
-  renderInfo(view) {
-    return 'Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.'
-  }
-  // componentDidUpdate() {
-  //   let test = document.querySelector('.index__content h1');
-  //   console.log(test)
-  // }
-  componentDidMount() {
-
-
-  }
   render() {
     const { currentView } = this.props;
     return (
@@ -25,16 +14,18 @@ export default class Title extends Component {
         </div>
         <div className="textList">
           <p className={currentView === 1 ? 'active' : ''}>
-            2Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
+            Seafood Phil is the hottest celebrity seafood chef across the country.
+            For 15 years he's been perfecting his original louisianna cajun menu while touring the country.
+            In his travels he's met and interviewed hundreds of big names. contact him today.
           </p>
           <p className={currentView === 2 ? 'active' : ''}>
-            Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
+            While SF deals mostly with celebrity orders, he's currently accepting catering orders. Order a mouth-watering box or plan your next party with the top seafood chef.
           </p>
           <p className={currentView === 3 ? 'active' : ''}>
-            Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
+            3Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
           </p>
           <p className={currentView === 4 ? 'active' : ''}>
-            Hiking is the preferred term, in Canada and the United States, for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.
+            Contact us today to learn more about SF, schedule a party, or for promotion opportunites.
           </p>
         </div>
       </div>

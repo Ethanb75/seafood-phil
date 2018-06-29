@@ -31,6 +31,32 @@ export default class IndexPage extends Component {
     clickDirection: 'up' /*or down */,
     swipedOnce: false
   }
+  wheelListener = ev => {
+    // console.log(this.state);
+    const { currentView, clickReady } = this.state;
+
+    return ev.deltaY > 0 ?
+      this.toggleDown(currentView, clickReady)
+      :
+      this.toggleUp(currentView, clickReady);
+  }
+  loadListener = () => {
+    let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
+
+    scrollHammers.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+    scrollHammers.on('swipeup swipedown', ev => {
+      let { currentView, clickReady } = this.state;
+
+      //after a swipe, remove the swipe caller
+      if (!this.state.swipedOnce) this.setState({ swipedOnce: true });
+
+      if (ev.type === 'swipeup') {
+        this.toggleDown(currentView, clickReady);
+      } else if (ev.type === 'swipedown') {
+        this.toggleUp(currentView, clickReady);
+      }
+    });
+  }
   toggleUp(currentView, clickReady) {
     let newView = currentView === 1 ? 4 : currentView - 1;
     if (clickReady) {
@@ -107,33 +133,15 @@ export default class IndexPage extends Component {
       })
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('load', this.loadListener);
+    window.removeEventListener('wheel', this.wheelListener);
+  }
+
   componentDidMount() {
 
-    window.addEventListener('load', () => {
-      let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
-
-      scrollHammers.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
-      scrollHammers.on('swipeup swipedown', ev => {
-        let { currentView, clickReady } = this.state;
-
-        //after a swipe, remove the swipe caller
-        if (!this.state.swipedOnce) this.setState({ swipedOnce: true });
-
-        if (ev.type === 'swipeup') {
-          this.toggleDown(currentView, clickReady);
-        } else if (ev.type === 'swipedown') {
-          this.toggleUp(currentView, clickReady);
-        }
-      });
-    });
-
-    window.addEventListener('wheel', ev => {
-      let { currentView, clickReady } = this.state;
-      return ev.deltaY > 0 ?
-        this.toggleDown(currentView, clickReady)
-        :
-        this.toggleUp(currentView, clickReady);
-    })
+    window.addEventListener('load', this.loadListener);
+    window.addEventListener('wheel', this.wheelListener);
   }
   render() {
     const { currentView, clickReady, swipedOnce } = this.state;

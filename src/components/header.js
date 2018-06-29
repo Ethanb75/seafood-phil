@@ -7,7 +7,6 @@ import navLogo from '../assets/Phil_Vector.png';
 
 
 // header handles state for nav visibility
-// const Header = ({ siteTitle }) => 
 
 export default class Header extends Component {
   state = {
@@ -33,17 +32,17 @@ export default class Header extends Component {
         <nav id="nav" className={navOpen ? 'navOpen' : ''}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => this.setState({ navOpen: false })}>Home</Link>
             </li>
-            <li><Link to="catering">Make an Order</Link></li>
+            <li><Link to="/order" onClick={() => this.setState({ navOpen: false })}>Make an Order</Link></li>
             <li className="break">
-              <a href="">@1nation_ent</a>
+              <a href="" onClick={() => this.setState({ navOpen: false })}>@1nation_ent</a>
             </li>
             <li>
-              <a href="mailto:contact@seafoodphil.com">contact@seafoodphil.com</a>
+              <a href="mailto:contact@seafoodphil.com" onClick={() => this.setState({ navOpen: false })}>contact@seafoodphil.com</a>
             </li>
             <li>
-              <a href="">(678) 633-4937</a>
+              <a href="" onClick={() => this.setState({ navOpen: false })}>(678) 633-4937</a>
             </li>
           </ul>
         </nav>
