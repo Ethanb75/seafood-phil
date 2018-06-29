@@ -13,7 +13,7 @@ export default class Catering extends Component {
     console.log(ev.target);
   }
   componentDidMount() {
-    document.getElementsByTagName('body')[0].style.overflow = 'scroll';
+    document.getElementsByTagName('body')[0].style.overflowY = 'scroll';
   }
   componentWillUnmount() {
     document.getElementsByTagName('body')[0].style.overflow = 'hidden';
@@ -25,7 +25,7 @@ export default class Catering extends Component {
       <div>
         <div className="orderBack"></div>
         <div className="orderWrap">
-          <form name="orderInfo" action="/order" data-netlify="true" netlify>
+          <form name="orderInfo" data-netlify="true" netlify>
             <div className="locationInfo">
               <h3>Delivery Location</h3>
               <div className="orderItem">
