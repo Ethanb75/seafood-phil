@@ -25,7 +25,7 @@ export default class Catering extends Component {
       <div>
         <div className="orderBack"></div>
         <div className="orderWrap">
-          <form>
+          <form name="orderInfo" netlify>
             <div className="locationInfo">
               <h3>Delivery Location</h3>
               <div className="orderItem">
