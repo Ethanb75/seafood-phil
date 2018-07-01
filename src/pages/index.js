@@ -22,6 +22,7 @@ import insta from '../assets/instagram.svg'
 import yt from '../assets/youtube.svg'
 
 const animationTime = 700;
+let scrollHammers;
 
 
 export default class IndexPage extends Component {
@@ -41,8 +42,9 @@ export default class IndexPage extends Component {
       this.toggleUp(currentView, clickReady);
   }
   loadListener = () => {
-    let scrollHammers = new Hammer(document.querySelector('.indexWrap'));
+    scrollHammers = new Hammer(document.querySelector('.indexWrap'));
 
+    console.log('loadListener');
     scrollHammers.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
     scrollHammers.on('swipeup swipedown', ev => {
       let { currentView, clickReady } = this.state;
@@ -136,11 +138,21 @@ export default class IndexPage extends Component {
   componentWillUnmount() {
     window.removeEventListener('load', this.loadListener);
     window.removeEventListener('wheel', this.wheelListener);
+
+    scrollHammers.destroy();
   }
 
   componentDidMount() {
-
-    window.addEventListener('load', this.loadListener);
+    // window.addEventListener('load', this.loadListener);
+    // setTimeout(() => {
+    if (scrollHammers) {
+      this.loadListener();
+    } else {
+      window.addEventListener('load', this.loadListener);
+    }
+    // window.addEventListener('load', this.loadListener);
+    // this.loadListener();
+    // }, 2000)
     window.addEventListener('wheel', this.wheelListener);
   }
   render() {

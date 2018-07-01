@@ -16,7 +16,6 @@ export default class Title extends Component {
           <p className={currentView === 1 ? 'active' : ''}>
             Seafood Phil is the hottest celebrity seafood chef across the country.
             For 15 years he's been perfecting his original louisianna cajun menu while touring the country.
-            In his travels he's met and interviewed hundreds of big names. contact him today.
           </p>
           <p className={currentView === 2 ? 'active' : ''}>
             While SF deals mostly with celebrity orders, he's currently accepting catering orders. Order a mouth-watering box or plan your next party with the top seafood chef.

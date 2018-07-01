@@ -20,12 +20,11 @@ export default class Catering extends Component {
   }
   render() {
     const { orderTiming } = this.state;
-    console.log(orderTiming)
     return (
       <div>
         <div className="orderBack"></div>
         <div className="orderWrap">
-          <form name="orderInfo" data-netlify="true" netlify>
+          <form name="orderInfo" data-netlify="true" method="POST">
             <div className="locationInfo">
               <h3>Delivery Location</h3>
               <div className="orderItem">
