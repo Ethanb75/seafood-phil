@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import Title from '../components/Title';
 import Link from 'gatsby-link';
 import anime from 'animejs';
 
 import './css/index.css';
-import heroVid from '../assets/vid.webm';
 
 //icons
 import up from '../assets/up.svg';
@@ -13,13 +13,16 @@ import play from '../assets/play.svg';
 
 // images
 import hero1 from '../assets/food.png';
-import hero2 from '../assets/h2.png';
-import hero3 from '../assets/contact.png';
+import hero2_lg from '../assets/cat-lg.jpg';
+import hero2_sm from '../assets/cat-sm.jpg';
+import hero3_lg from '../assets/contact.png';
+import hero3_sm from '../assets/contact_small.png';
 import hero4 from '../assets/catering2.png';
 
 //social media icons
-import insta from '../assets/instagram.svg'
-import yt from '../assets/youtube.svg'
+import insta from '../assets/instagram.svg';
+import phone from '../assets/phone.svg';
+import yt from '../assets/youtube.svg';
 
 const animationTime = 700;
 let scrollHammers;
@@ -143,27 +146,29 @@ export default class IndexPage extends Component {
   }
 
   componentDidMount() {
-    // window.addEventListener('load', this.loadListener);
-    // setTimeout(() => {
     if (scrollHammers) {
       this.loadListener();
     } else {
       window.addEventListener('load', this.loadListener);
     }
-    // window.addEventListener('load', this.loadListener);
-    // this.loadListener();
-    // }, 2000)
     window.addEventListener('wheel', this.wheelListener);
   }
   render() {
     const { currentView, clickReady, swipedOnce } = this.state;
     return (
       <div className="indexWrap">
+        <Helmet
+          title="Seafood Phil | Atlanta's Hottest Seafood Chef"
+          meta={[
+            { name: 'description', content: "Official homepage for Seafood Phil. Learn about Atlanta's hottest seafood chef or place an order today." },
+            { name: 'keywords', content: 'Seafood Phil, Big Seafood, catering, seafood, atlanta, Atlanta Catering' },
+          ]}
+        />
         <div className="index__image">
           <div className="index__background">
             <img className="start" src={hero1} />
-            <img src={hero2} />
-            <img src={hero3} />
+            <img src={hero2_sm} srcSet={`${hero2_sm} 600w, ${hero2_lg} 1920w`} />
+            <img src={hero3_sm} srcSet={`${hero3_sm} 600w, ${hero3_lg} 1920w`} />
             <img src={hero4} />
           </div>
           <div className="index__meta">
@@ -172,8 +177,6 @@ export default class IndexPage extends Component {
               <Link to="/order"><span>&larr;</span> checkout page</Link>
             </div>
             <div>
-              {/* change below video to image and a link to the video */}
-              {/* <video src={heroVid} /> */}
               <div className="videoDesc">
                 <p>
                   seafood phil takes on nyc
@@ -207,13 +210,13 @@ export default class IndexPage extends Component {
             </button>
           </nav>
           <div className="social">
-            <a href="">
-              <img src={insta} />
+            <a href="tel:+4044320872">
+              <img src={phone} />
             </a>
             <a href="">
               <img src={yt} />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/1nation_ent/">
               <img src={insta} />
             </a>
           </div>

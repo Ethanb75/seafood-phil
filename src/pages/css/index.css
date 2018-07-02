@@ -361,6 +361,16 @@ body, .article {
   margin-bottom: 0;
 }
 
+.contact_links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.contact_links a {
+  color: rgba(246, 248, 240, 0.733);
+}
+
 @media screen and (max-width: 1366px) {
   .titleList h1 {
     font-size: 8.62em;
@@ -460,6 +470,14 @@ body, .article {
     width: 1rem;
     margin: 0;
   }
+  .social {
+    right: initial;
+    left: 5vw;
+  }
+  .social a {
+    margin-right: 1.5rem;
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -492,6 +510,9 @@ body, .article {
     margin-top: 2rem;
     font-size: 3.583em;
     margin-bottom: 1rem;
+  }
+  .contact_links {
+    margin-top: .5rem;
   }
 }
 

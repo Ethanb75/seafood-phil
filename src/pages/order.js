@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
+import * as emailjs from 'emailjs-com';
 
 import './css/order.css';
 
@@ -12,8 +13,21 @@ export default class Catering extends Component {
   calculateBoxes(ev) {
     console.log(ev.target);
   }
+  sendOrder(ev) {
+    ev.preventDefault();
+    emailjs.sendForm('default_service', 'seafood', '#order').then(() => {
+      console.log('mail sent')
+    });
+  }
   componentDidMount() {
     document.getElementsByTagName('body')[0].style.overflowY = 'scroll';
+
+    window.addEventListener('load', () => {
+      emailjs.init("user_dCiSdqLDrAURIDmEOaMQH");
+      // setTimeout(() => {
+      //   console.log(emailjs);
+      // }, 2000);
+    })
   }
   componentWillUnmount() {
     document.getElementsByTagName('body')[0].style.overflow = 'hidden';
@@ -22,9 +36,16 @@ export default class Catering extends Component {
     const { orderTiming } = this.state;
     return (
       <div>
+        <Helmet
+          title='Order Catering or Delivery | Seafood Phil'
+          meta={[
+            { name: 'description', content: 'Order catering for Atlanta seafood chef Seafood Phil. Order online today.' },
+            { name: 'keywords', content: 'catering, seafood, atlanta, Seafood Phil, Big Seafood, Atlanta Catering' },
+          ]}
+        />
         <div className="orderBack"></div>
         <div className="orderWrap">
-          <form name="orderInfo" data-netlify="true" method="POST">
+          <form name="orderInfo" data-netlify="true" method="POST" id="order" onSubmit={ev => this.sendOrder(ev)}>
             <div className="locationInfo">
               <h3>Delivery Location</h3>
               <div className="orderItem">
@@ -60,12 +81,12 @@ export default class Catering extends Component {
             <div className="orderInfo">
               <h3>Order Timing</h3>
               <div>
-                <input type="radio" name="timing" onInput={() => this.setState({ orderTiming: 'now' })} required></input>
+                <input type="radio" name="timing" onInput={() => this.setState({ orderTiming: 'now' })} value="now" required></input>
                 <label htmlFor="delivery">Order instant delivery</label>
               </div>
               <div>
                 {/* if the state they select isn't georgia, disable the instant order button */}
-                <input type="radio" name="timing" onInput={() => this.setState({ orderTiming: 'later' })}></input>
+                <input type="radio" name="timing" value="later" onInput={() => this.setState({ orderTiming: 'later' })}></input>
                 <label htmlFor="catering">Schedule an order</label>
               </div>
               <div>
@@ -94,7 +115,7 @@ export default class Catering extends Component {
                 </div>
                 <div>
                   <label>special requests (food alergies, vegetarian options, etc.)</label>
-                  <textarea rows="5"></textarea>
+                  <textarea rows="5" name="special"></textarea>
                 </div>
               </div>
             </div>
