@@ -11,7 +11,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .orderBack {
   width: 100%;
   height: 15rem;
-  background-color: wheat;
+  filter: opacity(75%);
+  background-image: url(../../assets/foodCover.png);
+  background-size: cover;
 }
 .orderWrap {
   display: flex;

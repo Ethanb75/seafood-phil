@@ -12,6 +12,13 @@ export default class Header extends Component {
   state = {
     navOpen: false
   }
+  componentDidUpdate() {
+    // if (this.state.navOpen) {
+    //   document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
+    // } else {
+    //   document.getElementsByTagName('body')[0].style.overflowY = 'scroll';
+    // }
+  }
   render() {
     const { navOpen } = this.state;
     return (
@@ -19,7 +26,6 @@ export default class Header extends Component {
         <div className="navLogo">
           <Link to="/">
             <img src={navLogo} />
-            {/* <h3>Seafood <span style={{ display: 'block' }}>Phil</span></h3> */}
           </Link>
         </div>
         <div className="navBtnWrap">
