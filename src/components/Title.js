@@ -24,7 +24,7 @@ export default class Title extends Component {
             Seafood Phil's been cooking for celebrities and locals for over 15 years. Born in Louisiana, he moved to Atlanta to seek opportunity and expand his brand. He's catered for some of the biggest names like YFN lucci, lil Baby, & iHeart Radio.
           </p>
           <p className={currentView === 4 ? 'active' : ''}>
-            Contact us today to learn more about SF, schedule a party, or for promotion opportunites.
+            Contact us today to schedule a party or order delivery.
             <span className="contact_links">
               <a href="tel:+4044320872">
                 (404) 432-0872

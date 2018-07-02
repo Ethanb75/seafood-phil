@@ -14,9 +14,9 @@ import play from '../assets/play.svg';
 // images
 import hero1 from '../assets/food.png';
 import hero2_lg from '../assets/cat-lg.jpg';
-import hero2_sm from '../assets/cat-sm.jpg';
+import hero2_sm from '../assets/cat-sm2.jpg';
 import hero3_lg from '../assets/contact.png';
-import hero3_sm from '../assets/contact_small.png';
+import hero3_sm from '../assets/contact_small2.png';
 import hero4 from '../assets/catering2.png';
 
 //social media icons

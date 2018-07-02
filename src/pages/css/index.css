@@ -484,6 +484,9 @@ body, .article {
   .index__content {
     /* justify-content: flex-start; */
   }
+  .index__background img {
+    left: -25%;
+  }
   .titleList h1 {
     /* margin-top: 2.5rem; */
     font-size: 3.583em;
@@ -499,6 +502,9 @@ body, .article {
     margin-top: 4rem;
     font-size: 3.583em;
     margin-bottom: 1rem;
+  }
+  .index__background img {
+    left: 0;
   }
 }
 
