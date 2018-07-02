@@ -25,7 +25,7 @@ export default class Title extends Component {
           </p>
           <p className={currentView === 4 ? 'active' : ''}>
             Contact us today to learn more about SF, schedule a party, or for promotion opportunites.
-            <div className="contact_links">
+            <span className="contact_links">
               <a href="tel:+4044320872">
                 (404) 432-0872
               </a>
@@ -35,7 +35,7 @@ export default class Title extends Component {
               <a href="https://www.instagram.com/1nation_ent/">
                 @1nation_ent
               </a>
-            </div>
+            </span>
           </p>
         </div>
       </div>

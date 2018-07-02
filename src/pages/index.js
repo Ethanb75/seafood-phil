@@ -149,7 +149,7 @@ export default class IndexPage extends Component {
     if (scrollHammers) {
       this.loadListener();
     } else {
-      window.addEventListener('load', this.loadListener);
+      // window.addEventListener('load', this.loadListener);
     }
     window.addEventListener('load', this.loadListener);
     window.addEventListener('wheel', this.wheelListener);
