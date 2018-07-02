@@ -520,6 +520,9 @@ body, .article {
   .contact_links {
     margin-top: .5rem;
   }
+  .index__background img {
+    height: 115%;
+  }
 }
 
 @keyframes bounceIn{
