@@ -151,6 +151,7 @@ export default class IndexPage extends Component {
     } else {
       window.addEventListener('load', this.loadListener);
     }
+    window.addEventListener('load', this.loadListener);
     window.addEventListener('wheel', this.wheelListener);
   }
   render() {
