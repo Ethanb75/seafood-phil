@@ -515,7 +515,7 @@ body, .article {
   .titleList h1 {
     margin-top: 2rem;
     font-size: 3.583em;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
   }
   .contact_links {
     margin-top: .5rem;

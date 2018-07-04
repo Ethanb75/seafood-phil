@@ -106,12 +106,12 @@ export default class Catering extends Component {
               <div className="foodSelection">
                 <h3>Order Details</h3>
                 <div>
-                  <label htmlFor="amount">Amount of boxes / people attending ($20 per box)</label>
+                  <label htmlFor="amount">Amount of boxes / people attending</label>
                   <input type="number" min="1" name="amount" />
                 </div>
                 <div>
                   <input type="checkbox" name="lobster" />
-                  <label htmlFor="lobster">check to include lobster ($10 extra per box)</label>
+                  <label htmlFor="lobster">check to include lobster</label>
                 </div>
                 <div>
                   <label>special requests (food alergies, vegetarian options, etc.)</label>
